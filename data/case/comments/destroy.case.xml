@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<caselist>
+    <case>
+        <cid>400</cid>
+        <des>删除一条正常的评论</des>
+        <run>1</run>
+        <before><api>status,update,300,id</api></before>
+        <before><api>comments,create,100,id</api></before>
+        <p value="4125898983">source</p>
+        <p value="2.00mG98WBnnqNVEbede384558njAXRD">access_token</p>
+        <p value="needdata_id">cid</p>
+        <!-- 校验删除成功的返回结果 -->
+        <wish check="">par{"text":"删除成功"}</wish>
+        <!-- data clear -->
+        <after><api>status,destory,700,needdata_id</api></after>
+    </case>
+    <case>
+        <cid>401</cid>
+        <des>删除不存在的评论</des>
+        <run>1</run>
+        <p value="4125898983">source</p>
+        <p value="2.00mG98WBnnqNVEbede384558njAXRD">access_token</p>
+        <p value="999999999">cid</p>
+        <!-- 校验错误返回 -->
+        <wish check="">par{"error_code":20101}</wish>
+    </case>
+    <case>
+        <cid>402</cid>
+        <des>删除评论时缺少必要参数</des>
+        <run>1</run>
+        <p value="4125898983">source</p>
+        <p value="2.00mG98WBnnqNVEbede384558njAXRD">access_token</p>
+        <!-- 缺少cid参数 -->
+        <!-- 校验参数错误返回 -->
+        <wish check="">par{"error_code":10006}</wish>
+    </case>
+</caselist>
+

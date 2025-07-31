@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <api>
+        <host>api.weibo.com</host>
+        <url>/2/comments/destroy.json</url>
+        <apiname>destroy</apiname>
+        <des>删除一条评论</des>
+        <group>comments</group>
+        <ip>255.255.255.255</ip>
+        <protocol>https</protocol>
+        <islogin>0</islogin>
+        <method>POST</method>
+    </api>
+</root>
+
